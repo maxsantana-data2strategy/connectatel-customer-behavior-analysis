@@ -105,8 +105,7 @@ ConnectaTel serves 4,000 customers across two plans (`Basico`, `Premium`) in Lat
 ## [![View Repository Files](https://img.shields.io/badge/📂_View_Repository_Files-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maxsantana-data2strategy/connectatel-customer-behavior-analysis)
 
 ```
-├── notebooks/
-│   └── ConnectaTel_Customer_Behavior_Analysis.ipynb   # Full analysis notebook
+├── ConnectaTel_Customer_Behavior_Analysis.ipynb   # Full analysis notebook
 └── README.md                                          # This file
 ```
 
@@ -116,7 +115,7 @@ ConnectaTel serves 4,000 customers across two plans (`Basico`, `Premium`) in Lat
 
 > 🔒 **Note on Raw Data:** Due to privacy and confidentiality guidelines, the original raw datasets (`plans.csv`, `users.csv`, `usage.csv`) are not shared in this repository.
 
-1. **Explore the notebook:** Open `notebooks/ConnectaTel_Customer_Behavior_Analysis.ipynb` in Google Colab or Jupyter to review the full cleaning, EDA, and segmentation workflow.
+1. **Explore the notebook:** Open `ConnectaTel_Customer_Behavior_Analysis.ipynb` in Google Colab or Jupyter to review the full cleaning, EDA, and segmentation workflow.
 2. **Replicate with your own data:** Point the notebook's data-loading cell at CSVs with an equivalent schema (plan info, customer info, and call/text usage records) to reproduce the analysis.
 
 ---
