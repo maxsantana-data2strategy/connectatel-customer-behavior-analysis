@@ -8,6 +8,15 @@ Python/pandas exploratory analysis of customer behavior for ConnectaTel, a telec
 
 **Business Question:** Which customers drive the most value for ConnectaTel, and how should the company adjust its plans and retention strategy to match actual usage behavior?
 
+**Sub-questions:**
+
+"Which users display outliers that might indicate unusual behavior, potential fraud, or logging errors?"
+
+"How does usage vary according to age and the type of subscribed plan?"
+
+"What patterns can help design better plans, optimize the current offerings, and improve overall customer satisfaction?
+
+
 The business needed to understand who its heaviest users are, whether the current Basico/Premium plan structure fits real consumption patterns, and where "power users" — customers who push past typical usage — represent an upsell opportunity rather than noise to be cleaned away.
 
 ---
