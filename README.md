@@ -17,7 +17,7 @@ Python/pandas exploratory analysis of customer behavior for ConnectaTel, a telec
 - "What patterns can help design better plans, optimize the current offerings, and improve overall customer satisfaction?
 
 
-The business needed to understand who its heaviest users are, whether the current Basico/Premium plan structure fits real consumption patterns, and where "power users" — customers who push past typical usage — represent an upsell opportunity rather than noise to be cleaned away.
+The business needed to understand who its heaviest users are, whether the current Basic/Premium plan structure fits real consumption patterns, and where "power users" — customers who push past typical usage — represent an upsell opportunity rather than noise to be cleaned away.
 
 ---
 
@@ -44,7 +44,7 @@ The business needed to understand who its heaviest users are, whether the curren
 - Merged the aggregation into a single `user_profile` table alongside plan, age, and city
 
 ### Phase 5: Distribution & Outlier Analysis
-- Plotted histograms of age, messages, calls, and call minutes split by plan (`Basico` vs. `Premium`)
+- Plotted histograms of age, messages, calls, and call minutes split by plan (`Basic` vs. `Premium`)
 - Used boxplots, the **IQR method**, and **Z-scores (|Z| > 3)** to identify outliers in usage variables
 - **Decision: kept the outliers.** They represent legitimate high-engagement "power users," not data errors — removing them would hide the exact segment most likely to trigger overage fees or plan upgrades
 
@@ -100,13 +100,13 @@ ConnectaTel serves 4,000 customers across two plans (`Basico`, `Premium`) in Lat
 **🔍 Findings:**
 1. **Usage is heavily right-skewed:** most customers are light-to-moderate users, but a consistent minority — 21 to 47 users depending on the metric — drive disproportionate consumption.
 2. **`Medium use` is the center of gravity:** the largest usage segment, and where `Premium` already has its strongest foothold outside of `High use`.
-3. **`Basico` dominates every segment**, including among the heaviest users — a signal that current heavy users may be under-monetized on a plan not built for their consumption.
+3. **`Basic plan` dominates every segment**, including among the heaviest users — a signal that current heavy users may be under-monetized on a plan not built for their consumption.
 4. **Missingness is informative, not accidental:** the MAR pattern in `duration`/`length` reflects genuine call-vs-text structure, not a data collection failure — the retention risk signal, `churn_date`, is the null column that actually matters for follow-up.
 
 **💡 Implications:**
-- 🎯 **Power users are an upsell target, not an outlier to clean away.** The 21–47 heaviest users per metric are prime candidates for a higher-tier plan.
+- 🎯 ** Extremely high users are an upsell target, not an outlier to clean away.** The 21–47 heaviest users per metric are prime candidates for a higher-tier plan.
 - 🔄 **`Medium use` is the highest-leverage segment to move.** It's already the largest group and already has real `Premium` penetration — targeted incentives here have the shortest path to conversion.
-- 📊 **Re-examine the `Basico` plan's ceiling.** Its dominance even among `High use` customers suggests plan limits and messaging aren't differentiating usage tiers effectively.
+- 📊 **Re-examine the `Basic` plan's ceiling.** Its dominance even among `High use` customers suggests plan limits and messaging aren't differentiating usage tiers effectively.
 - 🩺 **Prioritize `churn_date` follow-up.** With 88.4% of customers active (no churn date), a deeper look at the 11.6% who did churn is the next highest-value analysis.
 
 ---
