@@ -4,6 +4,9 @@
 
 Python/pandas exploratory analysis of customer behavior for ConnectaTel, a telecommunications company operating in Latin America. Cleaned and merged three datasets (plans, users, usage) covering 4,000 customers and 40,000 usage records through 2024, built a per-user consumption profile, flagged and resolved data-quality issues, and segmented customers by usage intensity and age to surface retention and upsell opportunities.
 
+[![View Repository Files](https://img.shields.io/badge/📂_View_Repository_Files-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maxsantana-data2strategy/connectatel-customer-behavior-analysis)
+[![Download Infographic PDF](https://img.shields.io/badge/📥_Download_Infographic_PDF-2EA44F?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://raw.githubusercontent.com/maxsantana-data2strategy/connectatel-customer-behavior-analysis/main/assets/Infographic_ConnectaTel_EN.pdf)
+
 ## 🎯 Problem Statement
 
 **Business Question:** Which customers drive the most value for ConnectaTel, and how should the company adjust its plans and retention strategy to match actual usage behavior?
@@ -15,7 +18,6 @@ Python/pandas exploratory analysis of customer behavior for ConnectaTel, a telec
 - "How does usage vary according to age and the type of subscribed plan?"
 
 - "What patterns can help design better plans, optimize the current offerings, and improve overall customer satisfaction?
-
 
 The business needed to understand who its heaviest users are, whether the current Basic/Premium plan structure fits real consumption patterns, and where "power users" — customers who push past typical usage — represent an upsell opportunity rather than noise to be cleaned away.
 
@@ -84,6 +86,14 @@ The business needed to understand who its heaviest users are, whether the curren
 - **Usage:** `Medium use` is the largest segment, followed by `Low use` and `High use`. `Premium` has a meaningfully larger share within `Medium` and `High use` than within `Low use`.
 - **Distributions:** Messages, calls, and call minutes are all **right-skewed** across both plans — most customers cluster at modest usage, with a long tail of heavy users. `Premium` consistently shows the wider spread and longer tail.
 
+### 🖼️ Visualization
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/maxsantana-data2strategy/connectatel-customer-behavior-analysis/main/assets/usage_and_age_segments_by_plan.png" alt="Customers by usage segment and age segment, split by plan (Basico vs Premium)" width="800">
+</p>
+
+`Basico` outnumbers `Premium` in every usage and age segment, including the 278 `High use` customers (185 on `Basico`) — the clearest signal that heavy users are under-monetized on a plan not built for their consumption.
+
 ### Outliers Are the Opportunity, Not the Noise
 
 | Metric | IQR upper bound | Z-score outliers (\|Z\| > 3) | Max observed |
@@ -111,21 +121,23 @@ ConnectaTel serves 4,000 customers across two plans (`Basico`, `Premium`) in Lat
 
 ---
 
-## [![View Repository Files](https://img.shields.io/badge/📂_View_Repository_Files-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maxsantana-data2strategy/connectatel-customer-behavior-analysis)
-
 ```
-├── ConnectaTel_Customer_Behavior_Analysis.ipynb   # Full analysis notebook
-└── README.md                                          # This file
+├── ConnectaTel_Customer_Behavior_Analysis.ipynb # Full analysis notebook
+├── plans.csv                                    # Plan catalog (2 plans)
+├── users.csv                                    # Customer records (4,000 rows)
+├── usage.csv                                    # Call/text usage log (40,000 rows)
+├── assets/                                      # Infographic & chart images
+└── README.md                                    # This file
 ```
 
 ---
 
 ## 🚀 How to Use
 
-> 🔒 **Note on Raw Data:** Due to privacy and confidentiality guidelines, the original raw datasets (`plans.csv`, `users.csv`, `usage.csv`) are not shared in this repository.
+> ✅ **Raw Data Included:** The original datasets (`plans.csv`, `users.csv`, `usage.csv`) are included in this repository.
 
 1. **Explore the notebook:** Open `ConnectaTel_Customer_Behavior_Analysis.ipynb` in Google Colab or Jupyter to review the full cleaning, EDA, and segmentation workflow.
-2. **Replicate with your own data:** Point the notebook's data-loading cell at CSVs with an equivalent schema (plan info, customer info, and call/text usage records) to reproduce the analysis.
+2. **Reproduce the analysis:** Run the notebook against the included `plans.csv`, `users.csv`, and `usage.csv`, or point the data-loading cell at your own CSVs with an equivalent schema (plan info, customer info, and call/text usage records).
 
 ---
 
